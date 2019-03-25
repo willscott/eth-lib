@@ -4,7 +4,7 @@ const at = (bytes, index) =>
   parseInt(bytes.slice(index * 2 + 2, index * 2 + 4), 16);
 
 const random = bytes => {
-  let rnd = require("c" + "rypto").randomBytes(bytes);
+  let rnd = require("crypto").randomBytes(bytes);
   let hex = "0x";
   for (let i = 0; i < bytes; ++i)
     hex += ("00" + rnd[i].toString(16)).slice(-2);
